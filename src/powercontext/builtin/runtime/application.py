@@ -859,8 +859,7 @@ class ScopedContextApplication:
         from powercontext.builtin.runtime.context_pack import ContextPack, ContextPackDelta
 
         prepared = await self.prepare(request)
-        items = (prepared.content.encode("utf-8"),) if prepared.content else ()
-        pack = ContextPack.build(items)
+        pack = ContextPack.from_content(prepared.content or "")
         if base_pack is None:
             return pack
         return ContextPackDelta.between(base_pack, pack)
