@@ -14,6 +14,14 @@
 
 from powercontext.sources.adapters import SourceAdapter
 from powercontext.sources.catalog import SourceCatalog
+from powercontext.sources.csv_rows import (
+    CSV_ROW_SOURCE_DEFINITION,
+    CSVDocumentInput,
+    CSVRowInput,
+    CSVRowSource,
+    csv_row_source_id,
+    parse_csv_document,
+)
 from powercontext.sources.connectors import (
     Connector,
     ConnectorBinding,
@@ -45,6 +53,10 @@ from powercontext.sources.protocols import SourceCatalogBackend, SourceStore
 __all__ = [
     "TEXT_EVIDENCE_PROJECTION_KEY",
     "AdapterSourceDefinition",
+    "CSV_ROW_SOURCE_DEFINITION",
+    "CSVDocumentInput",
+    "CSVRowInput",
+    "CSVRowSource",
     "Connector",
     "ConnectorBinding",
     "ConnectorItemOutcome",
@@ -69,6 +81,8 @@ __all__ = [
     "SourceRef",
     "SourceStore",
     "TextEvidence",
+    "csv_row_source_id",
     "manifest_for_definition",
+    "parse_csv_document",
     "project_source_for_transport",
 ]
