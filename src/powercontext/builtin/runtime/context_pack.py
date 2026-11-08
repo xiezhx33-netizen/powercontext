@@ -77,7 +77,7 @@ class ContextPack:
         return pack
 
     @classmethod
-    def from_content(cls, content: str, *, chunk_bytes: int) -> ContextPack:
+    def from_content(cls, content: str, *, chunk_bytes: int = 512) -> ContextPack:
         if not isinstance(chunk_bytes, int) or isinstance(chunk_bytes, bool) or chunk_bytes < 1:
             raise ContextPackError("chunk_bytes must be a positive integer")
         data = content.encode("utf-8")
